@@ -1,6 +1,6 @@
 from rest_framework.routers import SimpleRouter
 
-from seleccionesapi.api.resources import SeleccionViewSet, PartidoViewSet
+from seleccionesapi.api.resources import SeleccionViewSet, PartidoViewSet, TipoPartidoViewSet
 
 from django.urls import include, path
 
@@ -8,6 +8,7 @@ from django.urls import include, path
 router = SimpleRouter()
 router.register('selecciones',viewset=SeleccionViewSet)
 router.register('partidos', viewset=PartidoViewSet)
+router.register('tipos_partido', viewset=TipoPartidoViewSet)
 
 urlpatterns = [
     path('',include(router.urls))
