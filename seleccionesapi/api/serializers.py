@@ -8,7 +8,7 @@ class SeleccionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Seleccion
         fields = ("__all__")
-        read_only_fields = ('probabilidad',)
+        #read_only_fields = ('probabilidad',)
 
 class PartidoSeliarizer(serializers.ModelSerializer):
     class Meta:

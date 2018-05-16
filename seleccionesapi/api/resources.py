@@ -16,8 +16,8 @@ class SeleccionViewSet(viewsets.ModelViewSet):
     según los resultados obtenidos en los partidos. 
     """
 
-    def perform_create(self, serializer):
-        serializer.save(probabilidad=0)
+    # def perform_create(self, serializer):
+    #     serializer.save(probabilidad=0)
 
 
     def definir_probabilidad(self):

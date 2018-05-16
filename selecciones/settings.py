@@ -25,7 +25,7 @@ SECRET_KEY = 'eg@%l)bmu$7^v$vh_(rn^a$=)&c9i4!+wx7quq^c!ggg_ga$5v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['25.64.216.41', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -75,25 +75,25 @@ WSGI_APPLICATION = 'selecciones.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'proyectonucleo2',
-#        'USER': 'nucleo',
-#        'PASSWORD': 'nucleo2',
-#        'HOST': '25.9.52.176',
-#        'PORT': '',
-#    }
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nucleo3',
-        'USER': 'root',
-        'PASSWORD': '',
-        }
+   'default': {
+       'ENGINE': 'django.db.backends.mysql',
+       'NAME': 'proyectonucleo2',
+       'USER': 'nucleo',
+       'PASSWORD': 'nucleo2',
+       'HOST': '25.9.52.176',
+       'PORT': '',
+   }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'nucleo3',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         }
+# }
 
 
 # Password validation
