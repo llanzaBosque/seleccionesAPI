@@ -43,48 +43,133 @@ class Partido(models.Model):
         return '%s %s %s' % (self.fecha, self.seleccion_local, self.seleccion_visitante)
 
 
-# Realiza el ordenamiento de las selecciones simulando
-# los resultados del mundial.
-class SeleccionesManager(models.Manager):
-    def ordenar_selecciones(self):
-        return
+# Representa las selecciones en cuartos de final
+class Cuartos(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+    pos = models.CharField(max_length=10)
 
-#  Retorna las selecciones por grupo
-class SeleccionesGrupoAManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'A')
+    class Meta:
+        managed = False
+        db_table = 'cuartos'
 
-#  Retorna las selecciones por grupo B
-class SeleccionesGrupoBManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'B')
+# Representa las selecciones que jugarán la final
+class Final(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+    pos = models.CharField(max_length=10)
 
-#  Retorna las selecciones por grupo C
-class SeleccionesGrupoCManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'C')
+    class Meta:
+        managed = False
+        db_table = 'final'
 
-#  Retorna las selecciones por grupo D
-class SeleccionesGrupoDManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'D')
 
-#  Retorna las selecciones por grupo E
-class SeleccionesGrupoEManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'E')
+class GrupoA(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
 
-#  Retorna las selecciones por grupo F
-class SeleccionesGrupoFManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'F')
+    class Meta:
+        managed = False
+        db_table = 'grupo_a'
 
-#  Retorna las selecciones por grupo G
-class SeleccionesGrupoGManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'G')
 
-#  Retorna las selecciones por grupo H
-class SeleccionesGrupoHManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(grupo = 'H')
+class GrupoB(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_b'
+
+
+class GrupoC(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_c'
+
+
+class GrupoD(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_d'
+
+
+class GrupoE(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_e'
+
+
+class GrupoF(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_f'
+
+
+class GrupoG(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_g'
+
+
+class GrupoH(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+
+    class Meta:
+        managed = False
+        db_table = 'grupo_h'
+
+
+class Octavos(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+    pos = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'octavos'
+
+
+class Podio(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=20)
+    pos = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'podio'
+
+class Semifinales(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=20)
+    pos = models.CharField(max_length=10)
+
+    class Meta:
+        managed = False
+        db_table = 'semifinales'
+
+
+class Tercerlugar(models.Model):
+    id_seleccion = models.ForeignKey(Seleccion, models.DO_NOTHING, db_column='id_seleccion')
+    nombre = models.CharField(max_length=50)
+    pos = models.CharField(max_length=10)
+
+    class Meta:
+        managed = False
+        db_table = 'tercerlugar'

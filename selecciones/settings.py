@@ -75,6 +75,17 @@ WSGI_APPLICATION = 'selecciones.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'pruebanucleo',
+#        'USER': 'nucleo',
+#        'PASSWORD': 'nucleo2',
+#        'HOST': '25.9.52.176',
+#        'PORT': '',
+#    }
+# }
+
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.mysql',
